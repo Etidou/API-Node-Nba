@@ -10,7 +10,7 @@ import Details from './details';
 * 3- Définir l'image comme fond
 * */
 
-export default class Background 
+export default class SecondBackground 
 {
     constructor () {
         this.initEls();
@@ -19,7 +19,7 @@ export default class Background
     initEls ()
     {
         this.Els = {
-            background: $('.js-background')
+            background: $('.js-second_background')
         }
         this.url = 'https://source.unsplash.com/collection';
         this.cat = '1538150';
@@ -55,7 +55,6 @@ export default class Background
     addBackground (image) {
         this.Els.background.css('background-image', `url(${image.src})`);
         this.Els.background.addClass('is-ready');
-        new Greeting();
-        new Quote();
+        new Details();
     }
 }

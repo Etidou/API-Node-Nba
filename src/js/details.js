@@ -36,9 +36,9 @@ export default class Details {
 
 
 
-  getNba_each() {
+	getNba_each() {
 		const api = {
-			 endpoint: `https://api-nba-v1.p.rapidapi.com/teams/teamId/1`,  
+			endpoint: `https://api-nba-v1.p.rapidapi.com/players/teamId/1`,  
 
 		};
 
@@ -47,35 +47,54 @@ export default class Details {
 		$.ajax({"url" : api.endpoint,
 			"data": api.params,
 			"headers":{
-    		'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com',
-    		'x-rapidapi-key': '51f1c1baddmsh02e892b0bd99394p10ae11jsn80c5aa2b10d4'
-  			}
-  		})
+				'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com',
+				'x-rapidapi-key': '51f1c1baddmsh02e892b0bd99394p10ae11jsn80c5aa2b10d4'
+			}
+		}).then((response) => {
+			console.log(response);
 
-		const nBPlayer = response.api.players;
+			const nBPlayer = response.api.players;
 
-		$(nBPlayer).each( () => {
-			console.log(response.api);
-			this.renderNbaplayer(response.api.players.firstName,response.api.players.lastName,response.api.players.playerId,response.api.players.leagues.standard.jersey);
+			$(nBPlayer).each( (i , item) => {
+				console.log(item);
+				this.renderNbaplayer(item.firstName,item.lastName,item.playerId,item.leagues.standard.jersey);
+			})
 		})
 		.catch((e) => {
 			console.log('error with the quote :', e);
 		});
 	}
 
-	 renderNbaplayer (firstName, lastName, playerId,jersey) {
+	renderNbaplayer (firstName, lastName, playerId,jersey) {
 
+	$('body').append('<div class="flex"></div>');
 
-	 	this.Els.playernameText.text(firstName);
-        this.Els.playernamelastText.text(lastName);
-        this.Els.playerclubName.text(playerId);
-        this.Els.playerjerseyText.text(jersey);
-        this.Els.container.addClass('is-ready');
+		$('div.flex').append('<p class="details js-playerlasteach"></p>');
+
+		$('p:last-of-type').append(firstName);
+
+		$('div.flex').append('<p class="details js-playernameeach"></p>');
+
+		$('p:last-of-type').append(lastName);
+
+		$('div.flex').append('<p class="details js-playerideach"></p>');
+
+		$('p:last-of-type').append(playerId);
+
+		$('div.flex').append('<p class="details js-playerjerseyeach"></p>');
+
+		$('p:last-of-type').append(jersey);
+
+		this.Els.playernameText.text(firstName);
+		this.Els.playernamelastText.text(lastName);
+		this.Els.playerclubName.text(playerId);
+		this.Els.playerjerseyText.text(jersey);
+		this.Els.container.addClass('is-ready');
 	}
 }
 
 
-	
+
 
 // const nBPlayer = response.api.players;
 

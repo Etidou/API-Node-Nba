@@ -22,12 +22,20 @@
   @extend %opacity-transition;
 }
 
+
+.team{
+justify-content: center; 
+  display: flex;
+
+  align-items: center;
+}
+
+
 .column {
   flex-direction: column;
 }
 
 body {
-  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
