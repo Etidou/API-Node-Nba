@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import Details from './details';
 
+
 /*
 * Objectif : récupérer une image aléatoire à partir d'une API et l'afficher
 *

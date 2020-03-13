@@ -24,6 +24,11 @@ config = {
                 test: /\.html$/,
                 use: 'html-loader'
             },
+
+              {
+                test: /\.hbs$/,
+                use: 'handlebars-loader'
+            },
             {
                 enforce: 'pre',
                 test: /\.js$/,
