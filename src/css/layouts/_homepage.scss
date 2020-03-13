@@ -1,0 +1,36 @@
+.flex{
+  display: flex;
+}
+
+.button
+{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  justify-content: center; 
+  display: flex;
+
+  align-items: center;
+  height: 100%;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  z-index: 1;
+  @extend %opacity-transition;
+}
+
+.column {
+  flex-direction: column;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
