@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import Mustache from 'mustache';
 
 /*
 * Objectif : récupérer une citation aléatoire à partir d'une API et l'afficher
@@ -58,6 +59,10 @@ export default class Details {
 			$(nBPlayer).each( (i , item) => {
 				console.log(item);
 				this.renderNbaplayer(item.firstName,item.lastName,item.playerId,item.leagues.standard.jersey);
+				// "firstName":this.item.firstName,
+				// 	"lastName":this.item.lastName,
+				// 	"playerId":this.item.playerId,
+				// 	"jersey":this.item.leagues.standard.jersey
 			})
 		})
 		.catch((e) => {
@@ -67,29 +72,41 @@ export default class Details {
 
 	renderNbaplayer (firstName, lastName, playerId,jersey) {
 
-	$('body').append('<div class="flex"></div>');
 
-		$('div.flex').append('<p class="details js-playerlasteach"></p>');
+					
+		$.get('templates/player.mst', function(template) {
+				var rendered = Mustache.render(item);
+				$('#player').html(rendered);
+			});
 
-		$('p:last-of-type').append(firstName);
 
-		$('div.flex').append('<p class="details js-playernameeach"></p>');
 
-		$('p:last-of-type').append(lastName);
 
-		$('div.flex').append('<p class="details js-playerideach"></p>');
 
-		$('p:last-of-type').append(playerId);
 
-		$('div.flex').append('<p class="details js-playerjerseyeach"></p>');
+	// $('body').append('<div class="flex"></div>');
 
-		$('p:last-of-type').append(jersey);
+	// 	$('div.flex').append('<p class="details js-playerlasteach"></p>');
 
-		this.Els.playernameText.text(firstName);
-		this.Els.playernamelastText.text(lastName);
-		this.Els.playerclubName.text(playerId);
-		this.Els.playerjerseyText.text(jersey);
-		this.Els.container.addClass('is-ready');
+	// 	$('p:last-of-type').append(firstName);
+
+	// 	$('div.flex').append('<p class="details js-playernameeach"></p>');
+
+	// 	$('p:last-of-type').append(lastName);
+
+	// 	$('div.flex').append('<p class="details js-playerideach"></p>');
+
+	// 	$('p:last-of-type').append(playerId);
+
+	// 	$('div.flex').append('<p class="details js-playerjerseyeach"></p>');
+
+	// 	$('p:last-of-type').append(jersey);
+
+	// 	this.Els.playernameText.text(firstName);
+	// 	this.Els.playernamelastText.text(lastName);
+	// 	this.Els.playerclubName.text(playerId);
+	// 	this.Els.playerjerseyText.text(jersey);
+	// 	this.Els.container.addClass('is-ready');
 	}
 }
 

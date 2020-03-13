@@ -1,0 +1,12 @@
+{{ #player }}
+
+<div id="player">
+<div id="flex">
+  <p class="details js-playerlasteach">{{firstName}}   </p>
+  <p class="details js-playernameeach"> {{lastName}}  </p> 
+  <p class="details js-playerjerseyeach"> {{playerId}}  </p>
+  <p class="details js-playerideach"> {{jersey}}  </p>
+</div>
+</div>
+
+{{ /player}}
