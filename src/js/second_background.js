@@ -15,11 +15,12 @@ export default class SecondBackground
     constructor () {
         this.initEls();
         this.initEvents();
+        console.log("init");
     }
     initEls ()
     {
         this.Els = {
-            background: $('.js-second_background')
+            background: $('.js-second-background')
         }
         this.url = 'https://source.unsplash.com/collection';
         this.cat = '1538150';
