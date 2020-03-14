@@ -4,9 +4,9 @@
   font-size: 18px;
   width: auto;
   margin-top: 20px;
-margin-left: 20px;
-margin-right: 20px;
-text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
   .is-ready & {
     background-color: rgba(white, 1);
   }
@@ -23,6 +23,8 @@ div#player
 {
   width: 50%;
   height: 100%;
+  margin-left: auto;
+  padding-right: 50px;
 }
 
 .blocjoueur
@@ -38,10 +40,12 @@ div#player
 
 span.jersey,h4.firstname,h4.lastname,h4.id
 {
-  padding-left: 50px;
-  padding-right: 50px;
   color: $grey;
+  width: 400px;
+  text-align: center;
 }
+
+
 
 
 .blocjoueur:first-child
@@ -59,7 +63,7 @@ span.jersey,h4.firstname,h4.lastname,h4.id
 {
   margin-top: 8px;
   width: 100%;
- height: 36px;
+  height: 36px;
   border-radius: 5px;
   border: solid 1px $grey;
   margin-bottom: 32px;
@@ -108,12 +112,12 @@ span.jersey,h4.firstname,h4.lastname,h4.id
 
 #search {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-bottom: 30px;
 }
 
-#search input {
+#search input:first-child {
+  padding-left: 20px;
  padding-top: 80px;
  font-family: Roboto;
  font-size: 60px;
@@ -127,10 +131,69 @@ span.jersey,h4.firstname,h4.lastname,h4.id
  border: 0;
  border-bottom: 2px solid $grey;
  padding-bottom: 16px;
- width: 100%;
+ width: auto;
  background-color: transparent;
+}
+
+#search input:last-child {
+ padding-top: 80px;
+ font-family: Roboto;
+ font-size: 60px;
+ font-weight: 500;
+ font-stretch: normal;
+ font-style: normal;
+ line-height: 1.07;
+ letter-spacing: normal;
+ color:blue;
+ outline: none;
+ border: 0;
+ border-bottom: 2px solid $grey;
+ padding-bottom: 16px;
+ width: auto;
+ background-color: transparent;
+}
+
+span.info {
+  font-weight: bold;
+}
+
+
+
+div.bloclub
+{
+  width: 300px;
+  height: 300px;
+  border: 2px solid $grey;
+  margin:30px;
 }
 
 
 
 
+div#team_east 
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h4.nameclub
+{
+  width: 100%;
+  text-align: center;
+
+}
+
+div.align_logo
+{
+  width: 100%;
+  text-align: center;
+  margin-top: 50%;
+  transform: translateY(-50%);
+img.logo
+{
+  width: 150px;
+  text-align: center;
+
+}
+}

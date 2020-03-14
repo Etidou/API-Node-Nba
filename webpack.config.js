@@ -82,6 +82,11 @@ config = {
             template: './src/second.html',
             filename: 'second.html',
         }),
+
+            new HtmlWebpackPlugin({
+            template: './src/third.html',
+            filename: 'third.html',
+        }),
     ]
 };
 module.exports = config;

@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import PlayerTemplate from './templates/player.hbs';
+import TeamTemplate from './templates/team.hbs';
 /*
 * Objectif : récupérer une citation aléatoire à partir d'une API et l'afficher
 *
@@ -38,7 +38,7 @@ export default class Details {
 
 	getNba_each() {
 		const api = {
-			endpoint: `https://api-nba-v1.p.rapidapi.com/players/teamId/1`,  
+			endpoint: `https://api-nba-v1.p.rapidapi.com/teams/confName/East`,  
 
 		};
 
@@ -52,9 +52,11 @@ export default class Details {
 			}
 		}).then((response) => {
 
-			const nBPlayer = response.api.players;
+			console.log(response);
 
-			$(nBPlayer).each( (i , item) => {
+			const nBteam = response.api.teams;
+
+			$(nBteam).each( (i , item) => {
 				this.renderNbaplayer(item);
 			})
 		})
@@ -65,12 +67,9 @@ export default class Details {
 
 	renderNbaplayer (item) {
 
-
-	
-		
-				var rendered = PlayerTemplate(item);
+				var rendered = TeamTemplate(item);
 				console.log(rendered);
-				$('#player').append(rendered);
+				$('#team_east').append(rendered);
 	}
 }
 
