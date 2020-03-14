@@ -3,6 +3,10 @@ import $ from 'jquery';
 import '../css/app.scss';
 import Background from './background';
 import SecondBackground from './second_background';
+import Second from './second';
+
+
+
 
 class App {
     constructor () {
@@ -17,7 +21,7 @@ class App {
 
         if($('.js-second-background').length){
             console.log("second_background");
-        	 new SecondBackground();
+        	 new Second();
         }
 
         if($('.js-background')){

@@ -1,11 +1,139 @@
 .details {
   padding: 20px;
   color: white;
-  font-size: 24px;
+  font-size: 18px;
   width: auto;
-  margin-top: 50px;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   text-align: center; }
   .is-ready .details {
     background-color: rgba(0, 0, 0, 0.3); }
+
+.secondflex {
+  display: flex;
+  flex-direction: columns; }
+
+.blocjoueur {
+  margin-top: 8px;
+  width: 100%;
+  height: 72px;
+  border-radius: 5px;
+  border: solid 1px white; }
+
+.blocjoueur:last-child {
+  margin-top: 8px;
+  width: 100%;
+  height: 72px;
+  border-radius: 5px;
+  border: solid 1px var(--very-light);
+  margin-bottom: 32px; }
+
+#info {
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-between; }
+
+#name, #nationality, #birth, #position {
+  width: 134px;
+  height: 16px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: var(--deep-purple); }
+
+.namej {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding-left: 160px;
+  width: 292px;
+  height: 24px;
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: var(--deep-purple); }
+
+.blocjoueur.not_matched {
+  display: none; }
+
+.nation {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 57px;
+  width: 205px;
+  height: 24px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  color: var(--deep-purple); }
+
+.naissance {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-right: 115px;
+  width: 175px;
+  height: 24px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  color: var(--deep-purple); }
+
+.shirt {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 16px;
+  width: 37px;
+  height: 32px;
+  object-fit: contain; }
+
+span.maillot {
+  width: 22px;
+  height: 16px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  text-align: center;
+  color: var(--white);
+  position: absolute;
+  transform: translate(106%, 180%); }
+
+.drapeau {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-right: 8px;
+  width: 24px;
+  height: 16px; }
+
+.positionj {
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 116px;
+  height: 24px;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: normal;
+  color: var(--deep-purple); }

@@ -25,7 +25,7 @@ export default class Details {
 			playerclubName: $('.js-playerideach'),
 			playerjerseyText: $('.js-playerjerseyeach'),
 			playernameText: $('.js-playernameeach'),
-			container: $('.js-container'),
+			// container: $('.js-container'),
 
 		}
 	}
@@ -117,3 +117,25 @@ export default class Details {
 //        $(nBPlayer).each( () => {
 
 
+
+	function search() {
+
+		$("body").on("keyup", "#search_player", function() {
+			var pattern = $(this). val().toLowerCase();
+			$(".blocjoueur").each(function(i) {
+				console.log('hello');
+				var content = $(this).find("h4.lastname").text().toLowerCase();
+				if (!content.includes(pattern)) {
+					$(this).addClass("not_matched");
+				}
+
+				else {
+					$(this).removeClass("not_matched");
+				}
+			});
+
+		});
+
+
+	}
+	search();
