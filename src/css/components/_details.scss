@@ -197,3 +197,20 @@ img.logo
 
 }
 }
+
+.team_east {
+  transform: translateX(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  z-index: 15;
+  transition-duration: 1s;
+}
+
+.team_east.open {
+  transform: translateX(0);
+  overflow-y: auto;
+}

@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import TeamTemplate from './templates/team.hbs';
+import PlayerTemplate from './templates/player.hbs';
 /*
 * Objectif : récupérer une citation aléatoire à partir d'une API et l'afficher
 *
@@ -9,41 +10,40 @@ import TeamTemplate from './templates/team.hbs';
 * 3- Afficher la citation
 * */
 
+
+
+
+
+
+
+
 export default class Details {
 	constructor(){
 		this.initEls();
-
-
-
 		this.initEvents();
 	}
 
 
 	initEls () {
-		this.Els = {
-			playernamelastText: $('.js-playerlasteach'),
-			playerclubName: $('.js-playerideach'),
-			playerjerseyText: $('.js-playerjerseyeach'),
-			playernameText: $('.js-playernameeach'),
-			// container: $('.js-container'),
 
-		}
 	}
 
 	initEvents() {
+		this.getTeam_each();
 		this.getNba_each();
 	}
 
 
 
-	getNba_each() {
+	getTeam_each() {
 		const api = {
 			endpoint: `https://api-nba-v1.p.rapidapi.com/teams/confName/East`,  
 
 		};
 
-		$.ajaxSetup({cache:false});
 
+
+		var team_id = $(this).attr('data-id');
 		$.ajax({"url" : api.endpoint,
 			"data": api.params,
 			"headers":{
@@ -57,6 +57,50 @@ export default class Details {
 			const nBteam = response.api.teams;
 
 			$(nBteam).each( (i , item) => {
+				this.renderNbaTeam(item);
+			})
+			$.ajaxSetup({cache:false});
+			$('body').on('click', '.bloclub', function() {
+
+				var team_id = $(this).attr('data-id');
+
+				console.log(team_id);
+			})
+			.catch((e) => {
+				console.log('error with the quote :', e);
+			});
+		});
+	}
+
+	renderNbaTeam (item) {
+
+		var rendered = TeamTemplate(item);
+		console.log(rendered);
+		$('#team_east').append(rendered);
+	}
+	
+
+
+
+	getNba_each() {
+		const api = {
+			endpoint: `https://api-nba-v1.p.rapidapi.com/players/teamId/1`,  
+
+		};
+
+		$.ajaxSetup({cache:false});
+
+		$.ajax({"url" : api.endpoint,
+			"data": api.params,
+			"headers":{
+				'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com',
+				'x-rapidapi-key': '51f1c1baddmsh02e892b0bd99394p10ae11jsn80c5aa2b10d4'
+			}
+		}).then((response) => {
+
+			const nBPlayer = response.api.players;
+
+			$(nBPlayer).each( (i , item) => {
 				this.renderNbaplayer(item);
 			})
 		})
@@ -67,50 +111,16 @@ export default class Details {
 
 	renderNbaplayer (item) {
 
-				var rendered = TeamTemplate(item);
+
+
+		
+				var rendered = PlayerTemplate(item);
 				console.log(rendered);
-				$('#team_east').append(rendered);
+				$('#player').append(rendered);
 	}
+
+
 }
 
 
 
-
-
-	function search() {
-
-		$("body").on("keyup", "#search_nom", function() {
-			var pattern = $(this). val().toLowerCase();
-			$(".blocjoueur").each(function(i) {
-				console.log('hello');
-				var content = $(this).find("h4.lastname").text().toLowerCase();
-				if (!content.includes(pattern)) {
-					$(this).addClass("not_matched");
-				}
-
-				else {
-					$(this).removeClass("not_matched");
-				}
-			});
-
-		});
-
-		$("body").on("keyup", "#search_prenom", function() {
-			var pattern = $(this). val().toLowerCase();
-			$(".blocjoueur").each(function(i) {
-				console.log('hello');
-				var content = $(this).find("h4.firstname").text().toLowerCase();
-				if (!content.includes(pattern)) {
-					$(this).addClass("not_matched");
-				}
-
-				else {
-					$(this).removeClass("not_matched");
-				}
-			});
-
-		});
-
-
-	}
-	search();

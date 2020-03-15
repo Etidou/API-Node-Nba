@@ -27,7 +27,7 @@ class App {
 
         if($('.js-third-background').length){
             console.log("third_background");
-             new Third();
+             new ThirdBackground();
         }
 
         if($('.js-background')){
