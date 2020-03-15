@@ -84,7 +84,7 @@ export default class Details {
 
 	getNba_each() {
 		const api = {
-			endpoint: `https://api-nba-v1.p.rapidapi.com/players/teamId/1`,  
+			endpoint: `https://api-nba-v1.p.rapidapi.com/players/teamId/${team_id}`,  
 
 		};
 
@@ -110,14 +110,12 @@ export default class Details {
 	}
 
 	renderNbaplayer (item) {
-
-
-
-		
 				var rendered = PlayerTemplate(item);
 				console.log(rendered);
 				$('#player').append(rendered);
 	}
+
+
 
 
 }
