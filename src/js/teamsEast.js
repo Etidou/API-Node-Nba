@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import TeamTemplate from './templates/team.hbs';
-import PlayerTemplate from './templates/player.hbs';
+import PlayerTemplateTeam from './templates/playerTeams.hbs';
 /*
 * Objectif : récupérer une citation aléatoire à partir d'une API et l'afficher
 *
@@ -11,13 +11,7 @@ import PlayerTemplate from './templates/player.hbs';
 * */
 
 
-
-
-
-
-
-
-export default class Details {
+export default class Third {
 	constructor(){
 		this.initEls();
 		this.initEvents();
@@ -82,9 +76,10 @@ export default class Details {
 
 
 
-	getNba_each() {
+	getNba_each(team_id) {
 		const api = {
-			endpoint: `https://api-nba-v1.p.rapidapi.com/players/teamId/${team_id}`,  
+			endpoint: `https://api-nba-v1.p.rapidapi.com/players/teamId/${team_id}`,
+
 
 		};
 
@@ -94,14 +89,14 @@ export default class Details {
 			"data": api.params,
 			"headers":{
 				'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com',
-				'x-rapidapi-key': '51f1c1baddmsh02e892b0bd99394p10ae11jsn80c5aa2b10d4'
+				'x-rapidapi-key': '51f1c1baddmsh02e892b0bd99394p10ae11jsn80c5aa2b10d4',  
 			}
 		}).then((response) => {
 
 			const nBPlayer = response.api.players;
 
 			$(nBPlayer).each( (i , item) => {
-				this.renderNbaplayer(item);
+				this.renderNbaplayer_team(item);
 			})
 		})
 		.catch((e) => {
@@ -109,16 +104,14 @@ export default class Details {
 		});
 	}
 
-	renderNbaplayer (item) {
-				var rendered = PlayerTemplate(item);
+	renderNbaplayer_team (item) {
+				var rendered = PlayerTemplateTeam(item);
 				console.log(rendered);
-				$('#player').append(rendered);
+				$('#playerteam').append(rendered);
 	}
-
-
-
-
 }
+
+
 
 
 

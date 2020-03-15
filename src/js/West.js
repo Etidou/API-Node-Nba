@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import Teams from './teams';
+import TeamsWest from './teamsWest';
 
 
 
@@ -9,4 +9,4 @@ export default class SecondBackground
         console.log("init");
     }
 }
- new Teams();
+ new TeamsWest();
