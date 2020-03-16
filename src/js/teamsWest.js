@@ -25,6 +25,7 @@ export default class Fourth {
 	initEvents() {
 		this.getTeam_each();
 		this.getNba_each();
+		this.team_id();
 	}
 
 
@@ -59,6 +60,7 @@ export default class Fourth {
 				var team_id = $(this).attr('data-id');
 
 				console.log(team_id);
+
 			})
 			.catch((e) => {
 				console.log('error with the quote :', e);
@@ -69,7 +71,7 @@ export default class Fourth {
 	renderNbaTeam (item) {
 
 		var rendered = TeamTemplate(item);
-		console.log(rendered);
+		// console.log(rendered);
 		$('#team_west').append(rendered);
 	}
 	
@@ -106,8 +108,23 @@ export default class Fourth {
 
 	renderNbaplayer_team (item) {
 				var rendered = PlayerTemplateTeam(item);
-				console.log(rendered);
+				// console.log(rendered);
 				$('#playerteam').append(rendered);
+	}
+
+
+
+
+	team_id(){
+			$('body').on('click', '.bloclub', function() {
+
+				var team_id = $(this).attr('data-id');
+
+				console.log(team_id);
+
+				
+			});
+			getNba_each(team_id);
 	}
 }
 

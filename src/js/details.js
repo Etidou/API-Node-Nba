@@ -69,7 +69,7 @@ export default class Details {
 	
 		
 				var rendered = PlayerTemplate(item);
-				console.log(rendered);
+				// console.log(rendered);
 				$('#player').append(rendered);
 	}
 }
