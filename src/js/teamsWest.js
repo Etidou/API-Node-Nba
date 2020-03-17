@@ -36,7 +36,7 @@ export default class Fourth {
 
 		};
 
-$.ajaxSetup({cache:false});
+		$.ajaxSetup({cache:false});
 
 		var team_id = $(this).attr('data-id');
 		$.ajax({"url" : api.endpoint,
@@ -102,26 +102,81 @@ $.ajaxSetup({cache:false});
 	}
 
 	renderNbaplayer_team (item) {
-				var rendered = PlayerTemplateTeam(item);
+		var rendered = PlayerTemplateTeam(item);
 				// console.log(rendered);
-				$('.playerteam').append(rendered);
-	}
+				$('.playerteamwest').append(rendered);
+			}
 
 
 
+			getNba_team(team_id) {
+		const api = {
+			endpoint: `https://api-nba-v1.p.rapidapi.com/teams/teamId/${team_id}`,
 
-	team_id(){
-			$('body').on('click', '.bloclub', (event) => {
 
-				var team_id = $(event.currentTarget).attr('data-id');
+		};
 
-				console.log(team_id);
+		$.ajaxSetup({cache:false});
 
-				this.getNba_each(team_id);
-			});
+		$.ajax({"url" : api.endpoint,
+			"data": api.params,
+			"headers":{
+				'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com',
+				'x-rapidapi-key': '51f1c1baddmsh02e892b0bd99394p10ae11jsn80c5aa2b10d4',  
+			}
+		}).then((response) => {
+
+			const teams_second = response.api.teams[0];
+
+			console.log(teams_second);
 			
+			$(teams_second).each( (i , item) => {
+				this.renderteam(item);
+			})
+
+			// console.log(response)
+
+			// 	this.renderteam(response);
+		})
+		.catch((e) => {
+			console.log('error with the quote :', e);
+		});
 	}
-}
+
+	renderteam (item) {
+		var rendered = ClubTeamTemplate(item);
+				console.log(rendered);
+				$('.club').append(rendered);
+			}
+
+
+
+
+			team_id(){
+				$('body').on('click', '.bloclub', (event) => {
+
+					var team_id = $(event.currentTarget).attr('data-id');
+
+					console.log(team_id);
+
+					this.getNba_each(team_id);
+					this.getNba_team(team_id);
+
+					$(".playerteam").addClass("open");
+					$("body").addClass("scroll");
+
+					$('body').on('click', '.cross', function() {
+
+						$(".playerteam.open").removeClass("open");
+						$("body.scroll").removeClass("scroll");
+
+
+					});
+
+				});
+
+			}
+		}
 
 
 

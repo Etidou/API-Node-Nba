@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import ClubTeamTemplate from './templates/club.hbs';
 import TeamTemplate from './templates/team.hbs';
 import PlayerTemplateTeam from './templates/playerTeams.hbs';
 /*
@@ -36,7 +37,7 @@ export default class Third {
 			endpoint: `https://api-nba-v1.p.rapidapi.com/teams/confName/East`,  
 
 		};
-$.ajaxSetup({cache:false});
+		$.ajaxSetup({cache:false});
 
 
 		var team_id = $(this).attr('data-id');
@@ -60,6 +61,8 @@ $.ajaxSetup({cache:false});
 			});
 		});
 	}
+
+
 
 	renderNbaTeam (item) {
 
@@ -100,24 +103,84 @@ $.ajaxSetup({cache:false});
 	}
 
 	renderNbaplayer_team (item) {
-				var rendered = PlayerTemplateTeam(item);
+		var rendered = PlayerTemplateTeam(item);
 				// console.log(rendered);
-				$('.playerteam').append(rendered);
+				$('.playerteameast').append(rendered);
+			}
+
+
+
+
+		getNba_team(team_id) {
+		const api = {
+			endpoint: `https://api-nba-v1.p.rapidapi.com/teams/teamId/${team_id}`,
+
+
+		};
+
+		$.ajaxSetup({cache:false});
+
+		$.ajax({"url" : api.endpoint,
+			"data": api.params,
+			"headers":{
+				'x-rapidapi-host': 'api-nba-v1.p.rapidapi.com',
+				'x-rapidapi-key': '51f1c1baddmsh02e892b0bd99394p10ae11jsn80c5aa2b10d4',  
+			}
+		}).then((response) => {
+
+			const teams_second = response.api.teams[0];
+
+			console.log(teams_second);
+
+			$(teams_second).each( (i , item) => {
+				this.renderteam(item);
+			})
+
+			// console.log(response)
+
+			// 	this.renderteam(response);
+		})
+		.catch((e) => {
+			console.log('error with the quote :', e);
+		});
 	}
 
-		team_id(){
-			$('body').on('click', '.bloclub', (event) => {
+	renderteam (item) {
+		var rendered = ClubTeamTemplate(item);
+				console.log(rendered);
+				$('.club').append(rendered);
+			}
 
-				var team_id = $(event.currentTarget).attr('data-id');
 
-				console.log(team_id);
+			team_id(){
+				$('body').on('click', '.bloclub', (event) => {
 
-				this.getNba_each(team_id);
-			});
+					var team_id = $(event.currentTarget).attr('data-id');
+
+					console.log(team_id);
+
+					this.getNba_each(team_id);
+					this.getNba_team(team_id);
+
+					$(".playerteam").addClass("open");
+					$("body").addClass("scroll");
+
+
+
+					$('body').on('click', '.cross', function() {
+
+						$(".playerteam.open").removeClass("open");
+						$("body.scroll").removeClass("scroll");
+
+
+					});
+
+
+
+				});
 			// getNba_each(team_id);
+		}
 	}
-}
-
 
 
 
