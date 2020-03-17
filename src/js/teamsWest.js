@@ -56,7 +56,7 @@ $.ajaxSetup({cache:false});
 			})
 			
 
-	
+
 			.catch((e) => {
 				console.log('error with the quote :', e);
 			});
@@ -67,7 +67,7 @@ $.ajaxSetup({cache:false});
 
 		var rendered = TeamTemplate(item);
 		// console.log(rendered);
-		$('#team_west').append(rendered);
+		$('.team_west').append(rendered);
 	}
 	
 
@@ -104,7 +104,7 @@ $.ajaxSetup({cache:false});
 	renderNbaplayer_team (item) {
 				var rendered = PlayerTemplateTeam(item);
 				// console.log(rendered);
-				$('#playerteam').append(rendered);
+				$('.playerteam').append(rendered);
 	}
 
 

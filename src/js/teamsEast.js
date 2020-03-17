@@ -65,7 +65,7 @@ $.ajaxSetup({cache:false});
 
 		var rendered = TeamTemplate(item);
 		// console.log(rendered);
-		$('#team_east').append(rendered);
+		$('.team_east').append(rendered);
 	}
 	
 
@@ -102,7 +102,7 @@ $.ajaxSetup({cache:false});
 	renderNbaplayer_team (item) {
 				var rendered = PlayerTemplateTeam(item);
 				// console.log(rendered);
-				$('#playerteam').append(rendered);
+				$('.playerteam').append(rendered);
 	}
 
 		team_id(){

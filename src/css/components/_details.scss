@@ -19,7 +19,7 @@
 }
 
 
-div#player
+div.player
 {
   width: 50%;
   height: 100%;
@@ -170,7 +170,7 @@ div.bloclub
 
 
 
-div#team_east,div#team_west 
+div.team_east,div.team_west 
 {
   display: flex;
   flex-wrap: wrap;
@@ -198,19 +198,19 @@ img.logo
 }
 }
 
-.team_east {
-  transform: translateX(100%);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: block;
-  z-index: 15;
-  transition-duration: 1s;
-}
+// .team_east {
+//   transform: translateX(100%);
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   display: block;
+//   z-index: 15;
+//   transition-duration: 1s;
+// }
 
-.team_east.open {
-  transform: translateX(0);
-  overflow-y: auto;
-}
+// .team_east.open {
+//   transform: translateX(0);
+//   overflow-y: auto;
+// }
