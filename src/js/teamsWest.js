@@ -24,7 +24,7 @@ export default class Fourth {
 
 	initEvents() {
 		this.getTeam_each();
-		this.getNba_each();
+		// this.getNba_each();
 		this.team_id();
 	}
 
@@ -36,7 +36,7 @@ export default class Fourth {
 
 		};
 
-
+$.ajaxSetup({cache:false});
 
 		var team_id = $(this).attr('data-id');
 		$.ajax({"url" : api.endpoint,
@@ -54,14 +54,9 @@ export default class Fourth {
 			$(nBteam).each( (i , item) => {
 				this.renderNbaTeam(item);
 			})
-			$.ajaxSetup({cache:false});
-			$('body').on('click', '.bloclub', function() {
+			
 
-				var team_id = $(this).attr('data-id');
-
-				console.log(team_id);
-
-			})
+	
 			.catch((e) => {
 				console.log('error with the quote :', e);
 			});
@@ -116,15 +111,15 @@ export default class Fourth {
 
 
 	team_id(){
-			$('body').on('click', '.bloclub', function() {
+			$('body').on('click', '.bloclub', (event) => {
 
-				var team_id = $(this).attr('data-id');
+				var team_id = $(event.currentTarget).attr('data-id');
 
 				console.log(team_id);
 
-				
+				this.getNba_each(team_id);
 			});
-			getNba_each(team_id);
+			
 	}
 }
 
