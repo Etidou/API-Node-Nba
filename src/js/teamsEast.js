@@ -148,7 +148,7 @@ export default class Third {
 	renderteam (item) {
 		var rendered = ClubTeamTemplate(item);
 				console.log(rendered);
-				$('.club').append(rendered);
+				$('.clubeast').append(rendered);
 			}
 
 
@@ -183,5 +183,26 @@ export default class Third {
 	}
 
 
+
+
+function search() {
+
+		$("body").on("keyup", ".search_player", function() {
+			var pattern = $(this). val().toLowerCase();
+			$(".blocjoueur").each(function(i) {
+				console.log('hello');
+				var content = $(this).find("h4.lastname").text().toLowerCase();
+				if (!content.includes(pattern)) {
+					$(this).addClass("not_matched");
+				}
+
+				else {
+					$(this).removeClass("not_matched");
+				}
+			});
+
+		});
+	search();
+	}
 
 

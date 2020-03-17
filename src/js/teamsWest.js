@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import TeamTemplate from './templates/team.hbs';
 import PlayerTemplateTeam from './templates/playerTeams.hbs';
+import ClubTeamTemplate from './templates/club.hbs';
 /*
 * Objectif : récupérer une citation aléatoire à partir d'une API et l'afficher
 *
@@ -144,9 +145,10 @@ export default class Fourth {
 	}
 
 	renderteam (item) {
+		$('.clubwest').remove();
 		var rendered = ClubTeamTemplate(item);
 				console.log(rendered);
-				$('.club').append(rendered);
+				$('.clubwest').append(rendered);
 			}
 
 
@@ -180,5 +182,25 @@ export default class Fourth {
 
 
 
+function search() {
 
+		$("body").on("keyup", ".search_player", function() {
+			var pattern = $(this). val().toLowerCase();
+			$(".blocjoueur").each(function(i) {
+				console.log('hello');
+				var content = $(this).find("h4.lastname").text().toLowerCase();
+				if (!content.includes(pattern)) {
+					$(this).addClass("not_matched");
+				}
+
+				else {
+					$(this).removeClass("not_matched");
+				}
+			});
+
+		});
+
+
+	}
+	search();
 
