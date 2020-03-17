@@ -24,8 +24,9 @@ export default class Third {
 
 	initEvents() {
 		this.getTeam_each();
-		this.getNba_each();
 		this.team_id();
+		// this.getNba_each(team_id);
+		
 	}
 
 
@@ -35,7 +36,7 @@ export default class Third {
 			endpoint: `https://api-nba-v1.p.rapidapi.com/teams/confName/East`,  
 
 		};
-
+$.ajaxSetup({cache:false});
 
 
 		var team_id = $(this).attr('data-id');
@@ -53,15 +54,8 @@ export default class Third {
 
 			$(nBteam).each( (i , item) => {
 				this.renderNbaTeam(item);
-			})
-			$.ajaxSetup({cache:false});
-			$('body').on('click', '.bloclub', function() {
 
-				var team_id = $(this).attr('data-id');
-
-				console.log(team_id);
-			})
-			.catch((e) => {
+			}).catch((e) => {
 				console.log('error with the quote :', e);
 			});
 		});
@@ -112,15 +106,15 @@ export default class Third {
 	}
 
 		team_id(){
-			$('body').on('click', '.bloclub', function() {
+			$('body').on('click', '.bloclub', (event) => {
 
-				var team_id = $(this).attr('data-id');
+				var team_id = $(event.currentTarget).attr('data-id');
 
 				console.log(team_id);
 
-				
+				this.getNba_each(team_id);
 			});
-			getNba_each(team_id);
+			// getNba_each(team_id);
 	}
 }
 
