@@ -27,16 +27,7 @@ div.player
   padding-right: 50px;
 }
 
-.blocjoueur
-{
-  margin-top: 8px;
- width: 70%;
-  height: 36px;
-  border-radius: 5px;
-  border: solid 1px $grey;
-  display: flex;
-  justify-content: space-between;
-}
+
 
 span.jersey,h4.firstname,h4.lastname,h4.id
 {
@@ -46,15 +37,26 @@ span.jersey,h4.firstname,h4.lastname,h4.id
 }
 
 
+.blocjoueur
+{
+  margin-top: 8px;
+ width: 100%;
+  height: 36px;
+  border-radius: 5px;
+  border: solid 1px $grey;
+  display: flex;
+  justify-content: space-between;
 
+}
 
 .blocjoueur:first-child
 {
   margin-top: 8px;
-  width: 70%;
+  width: 100%;
   height: 36px;
   border-radius: 5px;
   border: solid 1px $grey;
+
 }
 
 
@@ -62,17 +64,18 @@ span.jersey,h4.firstname,h4.lastname,h4.id
 .blocjoueur:last-child
 {
   margin-top: 8px;
-  width: 70%;
+  width: 100%;
   height: 36px;
   border-radius: 5px;
   border: solid 1px $grey;
   margin-bottom: 32px;
+
 }
 
 
 .blocjoueur.not_matched {
  display: none;
- width: 70%;
+ width: 100%;
 }
 
 #info {
@@ -94,20 +97,6 @@ span.jersey,h4.firstname,h4.lastname,h4.id
   line-height: 1.14;
   letter-spacing: normal;
   text-align: center;
-  color: $grey;
-}
-
-
-#name,#nationality,#birth,#position {
-  width: 134px;
-  height: 16px;
-  font-family: Roboto;
-  font-size: 14px;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.14;
-  letter-spacing: normal;
   color: $grey;
 }
 
@@ -155,6 +144,8 @@ span.jersey,h4.firstname,h4.lastname,h4.id
 
 span.info {
   font-weight: bold;
+  width: calc(100%/2);
+  text-align: center;
 }
 
 
@@ -177,12 +168,15 @@ div.team_east,div.team_west
   justify-content: center;
 }
 
-h4.nameclub
+h4.nameclub,h4.fullname,h4.nickname
 {
   width: 100%;
   text-align: center;
-
+  display: flex;
+justify-content: space-beetween;
 }
+
+
 
 div.align_logo
 {
@@ -196,6 +190,13 @@ img.logo
   text-align: center;
 
 }
+}
+
+img.sublogo
+{
+  width: 300px;
+  text-align: center;
+
 }
 
 .playerteam {
@@ -232,12 +233,26 @@ body.scroll
 .clubeast,.clubwest
 {
   width: 100%;
+  display: flex; 
+
 }
 
-.flex-team {
-
+.flex-team
+ {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: space-between;
+    padding: 0 200px 0 100px;
+}
 
+
+
+.playerteamwest,.playerteameast
+{
+  width: 60%;
+}
+
+div.column
+{
+  padding-left: 20px;
+  width: 100%;
 }
