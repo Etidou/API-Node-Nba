@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import ClubTeamTemplate from './templates/club.hbs';
+import ClubTeamTemplateeast from './templates/clubeast.hbs';
 import TeamTemplate from './templates/team.hbs';
 import PlayerTemplateTeam from './templates/playerTeams.hbs';
 /*
@@ -10,6 +10,45 @@ import PlayerTemplateTeam from './templates/playerTeams.hbs';
 * 2- Récupérer une citation aléatoire à partir de l'API de QuotesOnDesign (https://quotesondesign.com/api/)
 * 3- Afficher la citation
 * */
+
+function search() {
+
+		$("body").on("keyup", ".search_surname", function() {
+			var pattern = $(this). val().toLowerCase();
+			$(".blocjoueur").each(function(i) {
+				console.log('hello');
+				var content = $(this).find("h4.lastname").text().toLowerCase();
+				if (!content.includes(pattern)) {
+					$(this).addClass("not_matched");
+				}
+
+				else {
+					$(this).removeClass("not_matched");
+				}
+			});
+
+		});
+
+			$("body").on("keyup", ".search_name", function() {
+			var pattern = $(this). val().toLowerCase();
+			$(".blocjoueur").each(function(i) {
+				console.log('hello');
+				var content = $(this).find("h4.lastname").text().toLowerCase();
+				if (!content.includes(pattern)) {
+					$(this).addClass("not_matched");
+				}
+
+				else {
+					$(this).removeClass("not_matched");
+				}
+			});
+
+		});
+
+
+
+	}
+	search();
 
 
 export default class Third {
@@ -146,10 +185,11 @@ export default class Third {
 	}
 
 	renderteam (item) {
-		var rendered = ClubTeamTemplate(item);
+		var rendered = ClubTeamTemplateeast(item);
 				console.log(rendered);
 				$('.clubeast').append(rendered);
 			}
+
 
 
 			team_id(){
@@ -162,12 +202,16 @@ export default class Third {
 					this.getNba_each(team_id);
 					this.getNba_team(team_id);
 
+
+
 					$(".playerteam").addClass("open");
 					$("body").addClass("scroll");
 
-
+// $('.clubeast').append(rendered);
 
 					$('body').on('click', '.cross', function() {
+						$(".clubeast").empty();
+						$(".playerteameast").empty();
 
 						$(".playerteam.open").removeClass("open");
 						$("body.scroll").removeClass("scroll");
@@ -202,7 +246,7 @@ function search() {
 			});
 
 		});
-	search();
-	}
 
+	}
+	search();
 

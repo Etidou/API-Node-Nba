@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import TeamTemplate from './templates/team.hbs';
 import PlayerTemplateTeam from './templates/playerTeams.hbs';
-import ClubTeamTemplate from './templates/club.hbs';
+import ClubTeamTemplateWest from './templates/clubwest.hbs';
 /*
 * Objectif : récupérer une citation aléatoire à partir d'une API et l'afficher
 *
@@ -10,6 +10,45 @@ import ClubTeamTemplate from './templates/club.hbs';
 * 2- Récupérer une citation aléatoire à partir de l'API de QuotesOnDesign (https://quotesondesign.com/api/)
 * 3- Afficher la citation
 * */
+
+function search() {
+
+		$("body").on("keyup", ".search_surname", function() {
+			var pattern = $(this). val().toLowerCase();
+			$(".blocjoueur").each(function(i) {
+				console.log('hello');
+				var content = $(this).find("h4.lastname").text().toLowerCase();
+				if (!content.includes(pattern)) {
+					$(this).addClass("not_matched");
+				}
+
+				else {
+					$(this).removeClass("not_matched");
+				}
+			});
+
+		});
+
+			$("body").on("keyup", ".search_name", function() {
+			var pattern = $(this). val().toLowerCase();
+			$(".blocjoueur").each(function(i) {
+				console.log('hello');
+				var content = $(this).find("h4.lastname").text().toLowerCase();
+				if (!content.includes(pattern)) {
+					$(this).addClass("not_matched");
+				}
+
+				else {
+					$(this).removeClass("not_matched");
+				}
+			});
+
+		});
+
+
+
+	}
+	search();
 
 
 export default class Fourth {
@@ -145,8 +184,8 @@ export default class Fourth {
 	}
 
 	renderteam (item) {
-		$('.clubwest').remove();
-		var rendered = ClubTeamTemplate(item);
+
+		var rendered = ClubTeamTemplateWest(item);
 				console.log(rendered);
 				$('.clubwest').append(rendered);
 			}
@@ -169,6 +208,9 @@ export default class Fourth {
 
 					$('body').on('click', '.cross', function() {
 
+						$(".clubwest").empty();
+						$(".playerteamwest").empty();
+
 						$(".playerteam.open").removeClass("open");
 						$("body.scroll").removeClass("scroll");
 
@@ -178,29 +220,9 @@ export default class Fourth {
 				});
 
 			}
+
 		}
 
 
 
-function search() {
-
-		$("body").on("keyup", ".search_player", function() {
-			var pattern = $(this). val().toLowerCase();
-			$(".blocjoueur").each(function(i) {
-				console.log('hello');
-				var content = $(this).find("h4.lastname").text().toLowerCase();
-				if (!content.includes(pattern)) {
-					$(this).addClass("not_matched");
-				}
-
-				else {
-					$(this).removeClass("not_matched");
-				}
-			});
-
-		});
-
-
-	}
-	search();
 
