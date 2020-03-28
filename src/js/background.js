@@ -23,7 +23,7 @@ export default class Background
             background: $('.js-background')
         }
         this.url = 'https://source.unsplash.com/collection';
-        this.cat = '1538150';
+        this.cat = '1103088';
         this.size = '1920x1080';
     }
 

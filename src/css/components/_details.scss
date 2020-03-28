@@ -1,4 +1,4 @@
-.details{
+.details {
   padding: 20px;
   color: white;
   font-size: 18px;
@@ -7,75 +7,74 @@
   margin-left: 20px;
   margin-right: 20px;
   text-align: center;
-  .is-ready & {
-    background-color: rgba(white, 1);
-  }
+}
+
+.is-ready .details {
+  background-color: white;
 }
 
 .secondflex {
-	display: flex;
-	flex-direction: columns;
-
+  display: flex;
+  flex-direction: columns;
 }
 
-
-div.player
-{
+div.player {
   width: 50%;
   height: 100%;
   margin-left: auto;
   padding-right: 50px;
 }
 
+h4 {
+  &.lastname {
+    color: $grey;
+    width: 190px;
+    text-align: center;
+  }
 
+  &.small {
+    color: $grey;
+    width: 175px;
+    text-align: center;
+  }
+}
 
-span.jersey,h4.firstname,h4.lastname,h4.id
-{
+span.jersey, h4.firstname {
   color: $grey;
-  width: 400px;
+  width: 215px;
   text-align: center;
 }
 
-
-.blocjoueur
-{
+.blocjoueur {
   margin-top: 8px;
- width: 100%;
+  width: 100%;
   height: 36px;
   border-radius: 5px;
   border: solid 1px $grey;
   display: flex;
   justify-content: space-between;
 
-}
+  &:first-child {
+    margin-top: 8px;
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    border: solid 1px $grey;
+  }
 
-.blocjoueur:first-child
-{
-  margin-top: 8px;
-  width: 100%;
-  height: 36px;
-  border-radius: 5px;
-  border: solid 1px $grey;
+  &:last-child {
+    margin-top: 8px;
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    border: solid 1px $grey;
+    margin-bottom: 32px;
+  }
 
-}
-
-
-
-.blocjoueur:last-child
-{
-  margin-top: 8px;
-  width: 100%;
-  height: 36px;
-  border-radius: 5px;
-  border: solid 1px $grey;
-  margin-bottom: 32px;
-
-}
-
-
-.blocjoueur.not_matched {
- display: none;
- width: 100%;
+  &.not_matched {
+    display: none;
+    width: 100%;
+  }
 }
 
 #info {
@@ -84,8 +83,7 @@ span.jersey,h4.firstname,h4.lastname,h4.id
   justify-content: space-between;
 }
 
-
-#numero{
+#numero {
   margin-left: 16px;
   width: 37px;
   height: 16px;
@@ -104,99 +102,107 @@ span.jersey,h4.firstname,h4.lastname,h4.id
   display: flex;
   justify-content: space-around;
   padding-bottom: 30px;
+
+  input {
+    &:first-child, &:last-child {
+      padding-top: 20px;
+      font-family: Roboto;
+      font-size: 60px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.07;
+      letter-spacing: normal;
+      color: $blue_search;
+      outline: none;
+      border: 0;
+      border-bottom: 2px solid $grey;
+      padding-bottom: 16px;
+      width: auto;
+      background-color: transparent;
+      transition:border-bottom ease-in-out .3s
+    }
+
+   &:focus {
+ border-bottom: 2px solid $blue_search;
+ transition: 1s;
+}
+  }
 }
 
-.search input:first-child {
- padding-top: 20px;
- font-family: Roboto;
- font-size: 60px;
- font-weight: 500;
- font-stretch: normal;
- font-style: normal;
- line-height: 1.07;
- letter-spacing: normal;
- color:blue;
- outline: none;
- border: 0;
- border-bottom: 2px solid $grey;
- padding-bottom: 16px;
- width: auto;
- background-color: transparent;
+span {
+  &.info_club {
+    font-weight: bold;
+    width: calc(100%/1.5);
+    text-align: center;
+  }
+
+  &.info {
+    font-weight: bold;
+    width: calc(100%/2);
+    text-align: center;
+  }
 }
 
-.search input:last-child {
- padding-top: 20px;
- font-family: Roboto;
- font-size: 60px;
- font-weight: 500;
- font-stretch: normal;
- font-style: normal;
- line-height: 1.07;
- letter-spacing: normal;
- color:blue;
- outline: none;
- border: 0;
- border-bottom: 2px solid $grey;
- padding-bottom: 16px;
- width: auto;
- background-color: transparent;
+p.teamname {
+  width: calc(100%/2.5);
 }
 
-span.info {
-  font-weight: bold;
-  width: calc(100%/2);
-  text-align: center;
+div {
+  &.bloclub {
+    width: 300px;
+    height: 300px;
+    border: 2px solid $grey;
+    margin: 30px;
+    border-radius: 0px;
+
+    &:hover {
+      width: 300px;
+      height: 300px;
+      border: 2px solid $blue_hover;
+      background-color: $blue_hover;
+      margin: 30px;
+      border-radius: 50px;
+      transition: 1s ease-in-out;
+      -webkit-transition: 1s ease-in-out;
+    -moz-transition:1s ease-in-out;
+    -ms-transition: 1s ease-in-out;
+    -o-transition:1s ease-in-out;
+    }
+  }
+
+  &.team_east, &.team_west {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
-
-
-div.bloclub
-{
-  width: 300px;
-  height: 300px;
-  border: 2px solid $grey;
-  margin:30px;
+h4 {
+  &.nameclub, &.fullname, &.nickname {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: space-beetween;
+    padding-top: 10px;
+  }
 }
 
-
-
-
-div.team_east,div.team_west 
-{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-h4.nameclub,h4.fullname,h4.nickname
-{
-  width: 100%;
-  text-align: center;
-  display: flex;
-justify-content: space-beetween;
-}
-
-
-
-div.align_logo
-{
+div.align_logo {
   width: 100%;
   text-align: center;
   margin-top: 50%;
   transform: translateY(-50%);
-img.logo
-{
-  width: 150px;
-  text-align: center;
 
-}
+  img.logo {
+    width: 150px;
+    text-align: center;
+  }
 }
 
-img.sublogo
-{
+img.sublogo {
   width: 300px;
   text-align: center;
-
 }
 
 .playerteam {
@@ -209,50 +215,39 @@ img.sublogo
   display: block;
   z-index: 15;
   transition-duration: 1s;
+
+  &.open {
+    transform: translateX(0);
+    overflow-y: auto;
+    background-color: white;
+  }
 }
 
-.playerteam.open {
-  transform: translateX(0);
-  overflow-y: auto;
-  background-color: white;
-}
-
-
-body.scroll
-{
+body.scroll {
   overflow: hidden;
 }
 
-.cross
-{
+.cross {
   width: 3%;
   margin-left: 50%;
 }
 
-
-.clubeast,.clubwest
-{
+.clubeast, .clubwest {
   width: 100%;
-  display: flex; 
-
+  display: flex;
 }
 
-.flex-team
- {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 200px 0 100px;
+.flex-team {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
 }
 
-
-
-.playerteamwest,.playerteameast
-{
-  width: 60%;
+.playerteamwest, .playerteameast {
+  width: 65%;
 }
 
-div.column
-{
-  padding-left: 20px;
+div.column {
+  padding-right: 40px;
   width: 100%;
 }

@@ -2,53 +2,57 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Random Quotes App</title>
+    <title>Random Club & Joueur</title>
 </head>
-<body>
+<body class="index">
     <div class="background js-background">
     </div>
 
+    <div class="flex_body">
 
- <div class="button">
-    <a href="index.html"> <button type="submit" value="">Index</button> </a>
-    <a href="third.html"> <button type="submit" value="">Conference East</button> </a>
-    <a href="fourth.html"> <button type="submit" value="">Conference West</button> </a>
-  </div>
+        <div class="menu">
+            <a href="index.html"> <button type="submit" value="" class="btn draw-border space">Index</button> </a>
+            <a href="third.html"> <button type="submit" value="" class="btn draw-border space">Conference East</button> </a>
+            <a href="fourth.html"> <button type="submit" value="" class="btn draw-border space">Conference West</button> </a>
+        </div>
+
+<div class="regroup_column">
+
+        <div class="regroup">
+
+            <div class="container js-container">
+                <div class="column">
+                    <div class="align"> <p class="nba"> Ville : </p> <p class="nba js-city"></p> </div>
+                    <div class="align"> <p class="nba"> Nom du Club : </p>    <p class="nba js-name-club"></p></div>
+                    <div class="align"> <p class="nba"> Conference : </p>    <p class="nba js-conference"></p></div>
+                    <div class="align"> <p class="nba"> ID du Club : </p>    <p class="nba js-id"></p></div>
+                </div>
+            </div>
+
+            <div class="button_random">
+                <button type="submit" value="" id="randomClub" class="btn draw-border">Club Aléatoire</button>
+            </div>
 
 
-    <div class="flex">
+        </div>
+        <div class="regroup">
+            <div class="container js-container">
+                <div class="column">
+                    <div class="align"> <p class="nba"> Prenom : </p>  <p class="nba js-playername"></p></div>
+                    <div class="align"> <p class="nba"> Nom : </p>     <p class="nba js-playerlast"></p></div>
+                    <div class="align"> <p class="nba"> Numero de Maillot : </p>  <p class="nba js-playerjersey"></p></div>
+                    <div class="align"> <p class="nba"> ID du Joueur : </p>  <p class="nba js-playerid"></p></div>
+                    <div class="align"> <p class="nba"> Taille : </p>  <p class="nba js-playersize"></p></div>
+                    <div class="align"> <p class="nba"> Nationalité : </p>  <p class="nba js-playercountry"></p></div>
 
-        <div class="container js-container">
-            <div class="column">
-                <p class="nba js-city"></p>
-                <p class="nba js-name-club"></p>
-                <p class="nba js-conference"></p>
-                <p class="nba js-id"></p>
+                </div>
+            </div>
+
+            <div class="button_random">
+                <button type="submit" value="" id="randomPlayer" class="btn draw-border">Joueur Aléatoire</button>
             </div>
         </div>
-
-        <div class="button_random">
-            <h2 class="nba">Club aléatoire</h2>
-            <button type="submit" value="" id="randomClub">Club Aléatoire</button>
-        </div>
-
-
-        <div class="container js-container">
-            <div class="column">
-                <p class="nba js-playerlast"></p>
-                <p class="nba js-playername"></p> 
-                <p class="nba js-playerjersey"></p>
-                <p class="nba js-playerid"></p>
-                
-            </div>
-        </div>
-
-        <div class="button_random">
-            <h2 class="nba">Joueur aléatoire</h2>
-            <button type="submit" value="" id="randomPlayer">Joueur Aléatoire</button>
-        </div>
-
-
     </div>
+</div>
 </body>
 </html>

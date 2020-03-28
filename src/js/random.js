@@ -31,6 +31,8 @@ export default class Nba {
 			playerclubName: $('.js-playerid'),
 			playerjerseyText: $('.js-playerjersey'),
 			playernameText: $('.js-playername'),
+			playernationalityText: $('.js-playercountry'),
+			playersizeText: $('.js-playersize'),
 
 
 		}
@@ -115,21 +117,23 @@ export default class Nba {
   			}
   		})
 		.then((response) => {
-			console.log(response.api);
-			this.renderNbaplayer(response.api.players[0].firstName,response.api.players[0].lastName,response.api.players[0].playerId,response.api.players[0].leagues.standard.jersey);
+			console.log(response.api.players[0].country);
+			this.renderNbaplayer(response.api.players[0].firstName,response.api.players[0].lastName,response.api.players[0].playerId,response.api.players[0].leagues.standard.jersey,response.api.players[0].country,response.api.players[0].heightInMeters);
 		})
 		.catch((e) => {
 			console.log('error with the quote :', e);
 		});
 	}
 
-	 renderNbaplayer (firstName, lastName, playerId,jersey) {
+	 renderNbaplayer (firstName, lastName, playerId,jersey,country,heightInMeters) {
 
 
 	 	this.Els.playernameText.text(firstName);
         this.Els.playernamelastText.text(lastName);
         this.Els.playerclubName.text(playerId);
         this.Els.playerjerseyText.text(jersey);
+        this.Els.playernationalityText.text(country);
+        this.Els.playersizeText.text(heightInMeters);
 
 
 
@@ -146,6 +150,7 @@ randomPlayer () {
     return randomPlayerID;
   }
 }
+
 
 
 	
