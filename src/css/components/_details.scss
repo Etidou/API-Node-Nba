@@ -169,6 +169,11 @@ div {
     -ms-transition: 1s ease-in-out;
     -o-transition:1s ease-in-out;
     }
+
+   &.not_matched {
+    display: none;
+    width: 100%;
+  }
   }
 
   &.team_east, &.team_west {

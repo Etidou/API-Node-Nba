@@ -11,44 +11,60 @@ import PlayerTemplateTeam from './templates/playerTeams.hbs';
 * 3- Afficher la citation
 * */
 
-// function search() {
+function search() {
 
-// 		$("body").on("keyup", ".search_surname", function() {
-// 			var pattern = $(this). val().toLowerCase();
-// 			$(".blocjoueur").each(function(i) {
-// 				console.log('hello');
-// 				var content = $(this).find("h4.lastname").text().toLowerCase();
-// 				if (!content.includes(pattern)) {
-// 					$(this).addClass("not_matched");
-// 				}
+		$("body").on("keyup", ".search_surname", function() {
+			var pattern = $(this). val().toLowerCase();
+			$(".blocjoueur").each(function(i) {
+				console.log('hello');
+				var content = $(this).find("h4.lastname").text().toLowerCase();
+				if (!content.includes(pattern)) {
+					$(this).addClass("not_matched");
+				}
 
-// 				else {
-// 					$(this).removeClass("not_matched");
-// 				}
-// 			});
+				else {
+					$(this).removeClass("not_matched");
+				}
+			});
 
-// 		});
+		});
 
-// 			$("body").on("keyup", ".search_name", function() {
-// 			var pattern = $(this). val().toLowerCase();
-// 			$(".blocjoueur").each(function(i) {
-// 				console.log('hello');
-// 				var content = $(this).find("h4.lastname").text().toLowerCase();
-// 				if (!content.includes(pattern)) {
-// 					$(this).addClass("not_matched");
-// 				}
+			$("body").on("keyup", ".search_name", function() {
+			var pattern = $(this). val().toLowerCase();
+			$(".blocjoueur").each(function(i) {
+				console.log('hello');
+				var content = $(this).find("h4.lastname").text().toLowerCase();
+				if (!content.includes(pattern)) {
+					$(this).addClass("not_matched");
+				}
 
-// 				else {
-// 					$(this).removeClass("not_matched");
-// 				}
-// 			});
+				else {
+					$(this).removeClass("not_matched");
+				}
+			});
 
-// 		});
+		});
+
+				$("body").on("keyup", ".search_team", function() {
+			var pattern = $(this). val().toLowerCase();
+			$(".bloclub").each(function(i) {
+				console.log('hello');
+				var content = $(this).find("span.info").text().toLowerCase();
+				if (!content.includes(pattern)) {
+					$(this).addClass("not_matched");
+				}
+
+				else {
+					$(this).removeClass("not_matched");
+				}
+			});
+
+		});
 
 
 
-// 	}
-// 	search();
+	}
+	search();
 
 
 export default class Third {
