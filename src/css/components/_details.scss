@@ -17,6 +17,12 @@
 p {
   width: 100%;
 }
+
+p.teamname_second {
+  display: none;
+}
+
+
 .secondflex {
   display: flex;
   flex-direction: columns;
@@ -141,6 +147,8 @@ margin-bottom: 8px;
 }
   }
 }
+
+
 
 span {
   &.info_club {
@@ -284,7 +292,7 @@ img.sublogo {
 
 .search input:first-child, .search input:last-child {
     font-size: 40px;
-    width: 40%;
+    width: 42%;
 }
 div.menuconf {
     width: 85%;
@@ -320,7 +328,7 @@ div.column {
 }
 
 .search input:first-child, .search input:last-child {
-    width: 45%;
+    width: 48%;
 }
 
 div {
@@ -373,7 +381,7 @@ img.sublogo {
 }
 
 .search input:first-child, .search input:last-child {
-    width: 35.5%;
+    width: 38%;
     font-size: 30px;
 }
 
@@ -415,7 +423,7 @@ h4 {
 }
 
 .search input:first-child, .search input:last-child {
-    width: 37%;
+    width: 40%;
 }
 
 h4 {
