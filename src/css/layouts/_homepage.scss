@@ -175,3 +175,49 @@ div.regroup:last-of-type
   margin-bottom: 200px;
 }
 
+@media all and (max-width:1610px )
+{
+.btn {
+  font: 700 1rem 'Roboto Slab', sans-serif;
+}
+
+div.regroup
+{
+  display: flex;
+  margin: 25px;
+}
+
+div.regroup:first-of-type
+{
+  margin-top: 25px;
+}
+
+div.regroup:last-of-type
+{
+  margin-bottom: 100px;
+}
+
+}
+
+@media all and (max-width:1378px )
+{
+
+div.regroup
+{
+  display: flex;
+  margin: 15px;
+}
+}
+
+@media all and (max-width:1290px )
+{
+
+div.regroup
+{
+  display: flex;
+  margin: 10px;
+}
+.btn {
+  font: 700 0.8rem 'Roboto Slab', sans-serif;
+}
+}

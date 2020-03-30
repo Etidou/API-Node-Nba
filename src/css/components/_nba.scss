@@ -20,6 +20,24 @@ text-align: center;
 }
 
 
+@media all and (max-width:1610px )
+{
+  .nba{
+  font-size: 18px;
+  padding: calc(100vh/45);
+}
+
+}
+
+@media all and (max-width:1290px )
+{
+  .nba{
+  font-size: 16px;
+  padding: calc(100vh/45);
+}
+
+}
+
 
 
 

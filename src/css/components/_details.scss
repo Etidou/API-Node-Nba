@@ -159,8 +159,8 @@ div {
     &:hover {
       width: 300px;
       height: 300px;
-      border: 2px solid $blue_hover;
-      background-color: $blue_hover;
+      border: 2px solid $blue_search;
+      background-color: $blue_search;
       margin: 30px;
       border-radius: 50px;
       transition: 1s ease-in-out;
@@ -256,3 +256,4 @@ div.column {
   padding-right: 40px;
   width: 100%;
 }
+
