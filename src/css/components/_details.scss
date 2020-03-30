@@ -179,6 +179,7 @@ div {
     border: 2px solid $grey;
     margin: 30px;
     border-radius: 0px;
+    transition-duration: 0.5s;
 
     &:hover {
       width: 300px;
@@ -187,11 +188,11 @@ div {
       background-color: $blue_search;
       margin: 30px;
       border-radius: 50px;
-      transition: 1s ease-in-out;
-      -webkit-transition: 1s ease-in-out;
-    -moz-transition:1s ease-in-out;
-    -ms-transition: 1s ease-in-out;
-    -o-transition:1s ease-in-out;
+      transition: 0.5s ease-in-out;
+      -webkit-transition: 0.5s ease-in-out;
+    -moz-transition:0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition:0.5s ease-in-out;
     }
 
    &.not_matched {
@@ -259,6 +260,7 @@ body.scroll {
 .cross {
   width: 3%;
   margin-left: 50%;
+  margin-top: 2%;
 }
 
 .clubeast, .clubwest {
