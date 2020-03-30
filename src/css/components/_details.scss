@@ -13,6 +13,10 @@
   background-color: white;
 }
 
+
+p {
+  width: 100%;
+}
 .secondflex {
   display: flex;
   flex-direction: columns;
@@ -30,12 +34,18 @@ h4 {
     color: $grey;
     width: 190px;
     text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
   }
 
   &.small {
     color: $grey;
     width: 175px;
     text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+
   }
 }
 
@@ -43,6 +53,8 @@ span.jersey, h4.firstname {
   color: $grey;
   width: 215px;
   text-align: center;
+  margin-top: 8px;
+margin-bottom: 8px;
 }
 
 .blocjoueur {
@@ -145,6 +157,10 @@ span {
 }
 
 p.teamname {
+  width: calc(100%/2.5);
+}
+
+p.teamname_second {
   width: calc(100%/2.5);
 }
 
@@ -255,5 +271,182 @@ body.scroll {
 div.column {
   padding-right: 40px;
   width: 100%;
+  padding-left: 40px;
 }
+
+@media all and (max-width:1610px )
+{
+
+img.sublogo {
+    width: 225px;
+    text-align: center;
+}
+
+.search input:first-child, .search input:last-child {
+    font-size: 40px;
+    width: 40%;
+}
+div.menuconf {
+    width: 85%;
+}
+
+}
+
+
+@media all and (max-width:1450px )
+{
+
+span.jersey, h4.firstname {
+    font-size: 14px;
+}
+
+h4 {
+  &.lastname {
+    font-size: 14px;
+  }
+
+  &.small {
+    font-size: 14px;
+  }
+}
+
+.flex-team {
+    padding: 0 50px 0 50px;
+}
+
+div.column {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.search input:first-child, .search input:last-child {
+    width: 45%;
+}
+
+div {
+  &.bloclub {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+
+    &:hover {
+      width: 200px;
+      height: 200px;
+      margin: 20px;
+    }
+  }
+}
+
+div.align_logo img.logo {
+
+    width: 100px;
+
+}
+
+div.align_logo {
+    transform: translateY(-60%);
+}
+
+}
+
+
+@media all and (max-width:1376px )
+{
+
+span {
+  &.info_club {
+    font-size: 14px;
+  }
+
+  &.info {
+    font-size: 14px;
+  }
+}
+
+p.teamname {
+  font-size: 14px;
+}
+
+img.sublogo {
+    width: 175px;
+    text-align: center;
+}
+
+.search input:first-child, .search input:last-child {
+    width: 35.5%;
+    font-size: 30px;
+}
+
+}
+
+@media all and (max-width:1290px )
+{
+
+span {
+  &.info_club {
+    font-size: 12px;
+  }
+
+  &.info {
+    font-size: 12px;
+  }
+}
+
+p.teamname {
+  font-size: 12px;
+}
+
+span.jersey, h4.firstname {
+    font-size: 12px;
+}
+
+h4 {
+  &.lastname {
+    font-size: 12px;
+  }
+
+  &.small {
+    font-size: 12px;
+  }
+}
+
+.flex-team {
+    padding: 0 25px 0 50px;
+}
+
+.search input:first-child, .search input:last-child {
+    width: 37%;
+}
+
+h4 {
+  &.lastname {
+    margin-top:12px;
+    margin-bottom:12px;
+
+  }
+
+  &.small {
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+  }
+}
+
+span.jersey, h4.firstname {
+margin-top:12px;
+margin-bottom:12px;
+}
+
+
+p.teamname_second {
+  display: none;
+}
+
+p {
+  width: 100%;
+}
+
+}
+
+
 
