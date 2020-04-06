@@ -1,9 +1,8 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 
 import '../css/app.scss';
-import Background from './background';
-import ThirdBackground from './East';
-import FourthBackground from './West';
+import Preloader from './Preload';
+import Barba from './Barba';
 
 
 
@@ -20,22 +19,12 @@ class App {
         // // new SecondBackground();
 
 
-        if($('.js-third-background').length){
-            console.log("third_background");
-             new ThirdBackground();
-        }
 
-         if($('.js-fourth-background').length){
-            console.log("fourth_background");
-             new FourthBackground();
-        }
-
-        if($('.js-background')){
-        	 new Background();
-        }
     }
 }
 
 new App();
+new Preloader();
+new Barba();
 
 

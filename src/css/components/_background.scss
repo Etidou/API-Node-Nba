@@ -1,11 +1,107 @@
-.background {
-  background-size: cover;
-  background-position: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  @extend %opacity-transition;
+.anim-overlay {
+    background-color: black;
+    height: 100%;
+    transform: translateX(-100%); 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9000;
+}
+
+.preload-overlay {
+    background-color: white;
+    height: 100vh;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9000;
+
+    .overlay {
+        background-color: black;
+        height: 100%;
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        transform: translateY(-100%);
+        width: 100%;
+        z-index: 2;
+    }
+
+    .container {
+        align-items: center;
+        display: none;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+        z-index: 3;
+
+        img {
+            width: 200px;
+            margin-bottom: 30px;
+        }
+
+        div {
+            height: 40px;
+            overflow: hidden;
+        }
+
+        span {
+            display: inline-block;
+            font-family: $font_karla;
+            font-size: 30px;
+            line-height: 40px;
+            position: relative;
+            transform: translateY(100%);
+        }
+
+        & span:nth-child(3) {
+            font-weight: bold;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .preload-overlay {
+    
+        .overlay {
+            background-color: black;
+            height: 100%;
+            left: 0;
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            transform: translateY(-100%);
+            width: 100%;
+        }
+    
+        .container {
+    
+            img {
+                width: 100px;
+                margin-bottom: 30px;
+            }
+    
+            div {
+                display: inline-block;
+                height: 31px;
+                overflow: hidden;
+                text-align: center;
+                width: 100%;
+
+            }
+    
+            span {
+                font-size: 17px;
+            }
+
+            #feature {
+                display: none;
+            }
+    
+        }
+    }
 }

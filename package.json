@@ -39,9 +39,10 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "handlebars": "^4.7.3",
-    "handlebars-loader": "^1.7.1",
+    "@barba/core": "^2.9.7",
+    "gsap": "^3.2.6",
     "jquery": "^3.4.1",
-    "mustache": "^4.0.0"
+    "php": "0.0.1",
+    "php-loader": "^0.2.0"
   }
 }

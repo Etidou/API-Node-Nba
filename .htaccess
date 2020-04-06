@@ -1,0 +1,62 @@
+AddDefaultCharset "utf-8"
+
+##
+## INTERDIT L'ACCES AU FICHIER .HTACCESS	
+##
+<Files .htacess>
+order allow,deny
+deny fromm all 
+</Files>
+
+
+##
+## Empecher la recherche a la racine 	
+##
+
+Otions All -indexes
+
+##
+## Mettre par defaut l'affichage	
+##
+
+<FilesMatch "\.(htm|html|css|js|php)$">
+AddDefaultCharset UTF-8
+DefaultLanguage fr-fr
+</FilesMatch
+
+
+##
+## Reecrire nom des pages	
+##
+
+Options +FollowSymlinks -MultiViews
+
+RewriteEngine On
+RewriteBase /
+
+# NE PAS OUBLIER D'ENLEVER LES # POUR FORCER LE WWW (pb en localhost)
+# Redirect non-www to www:
+# RedirectCond {HTTP-HOST} !^www\. [NC]
+# RedirectRule ^(.*)$  http://.%{HTTP_POST}/$1 [R=301,L] 
+
+
+# Redirect http to https
+# RedirectCond ${HTTPS} off
+# RedirectRule (.*)  https://.%{HTTP_POST}/$1 [R=301,L] 
+
+
+# unless directory, remove trailing slash
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/$ http://%{HTTP_POST}/$1 [R=301,L]
+
+# Redirect external .html requests to extensionsless url
+RewriteCond %{THE_REQUEST} ^(.+)\.html([#?][^\ ]*)?\ HTTP/ 
+RewriteRule ^(.+)\.html$ http://%{HTTP_HOST}/$1 [R=301,L]
+
+
+# add extension if the html files exists:
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
