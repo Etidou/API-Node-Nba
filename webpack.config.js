@@ -24,6 +24,11 @@ config = {
                 test: /\.html$/,
                 use: 'html-loader'
             },
+
+              {
+                test: /\.hbs$/,
+                use: 'handlebars-loader'
+            },
             {
                 enforce: 'pre',
                 test: /\.js$/,
@@ -73,19 +78,14 @@ config = {
             filename: 'index.html',
         }),
 
-        new HtmlWebpackPlugin({
-            template: './src/html/contact.html',
-            filename: 'contact.html',
+            new HtmlWebpackPlugin({
+            template: './src/third.html',
+            filename: 'third.html',
         }),
 
-        new HtmlWebpackPlugin({
-            template: './src/html/history.html',
-            filename: 'history.html',
-        }),
-
-        new HtmlWebpackPlugin({
-            template: './src/html/product.html',
-            filename: 'product.html',
+                new HtmlWebpackPlugin({
+            template: './src/fourth.html',
+            filename: 'fourth.html',
         }),
     ]
 };

@@ -1,64 +1,63 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <base href="/">
-  <meta charset="utf-8"/>
-  <title>L'essaim Naturel</title>
-  <meta name="Author" content="Etienne Pharabot"/>
-  <meta name="Keywords" content="Document HTML5 exemple"/>
-  <meta name="Description" content="Document HTML5 exemple"/>
-  <meta name="viewport" content="width=device-width, initial scale=1.0"/>
-
-
+    <meta charset="UTF-8">
+    <title>Random Club & Joueur</title>
 </head>
+<body class="index">
+    <div class="background js-background">
+    </div>
+
+    <div class="flex_body">
+
+        <div class="menu">
+            <a href="index.html"> <button type="submit" value="" class="btn draw-border space">Index</button> </a>
+            <a href="third.html"> <button type="submit" value="" class="btn draw-border space">Conference East</button> </a>
+            <a href="fourth.html"> <button type="submit" value="" class="btn draw-border space">Conference West</button> </a>
+        </div>
+
+        <div class="regroup_column">
+
+            <div class="regroup">
+
+                <div class="container js-container">
+                    <div class="column">
+                        <div class="align"> <p class="nba"> Ville : </p> <p class="nba js-city"></p> </div>
+                        <div class="align"> <p class="nba"> Nom du Club : </p>    <p class="nba js-name-club"></p></div>
+                        <div class="align"> <p class="nba"> Surnom : </p>    <p class="nba js-nickname"></p></div>
+                        <div class="align"> <p class="nba"> Conference : </p>    <p class="nba js-conference"></p></div>
+                        <div class="align"> <p class="nba"> ID du Club : </p>    <p class="nba js-id"></p></div>
+
+                    </div>
+                </div>
+
+                <div class="button_random">
+                    <button type="submit" value="" id="randomClub" class="btn draw-border">Club Aléatoire</button>
+                </div>
 
 
+            </div>
+            <div class="regroup">
+                <div class="container js-container">
+                    <div class="column">
+                        <div class="align"> <p class="nba"> Prenom : </p>  <p class="nba js-playername"></p></div>
+                        <div class="align"> <p class="nba"> Nom : </p>     <p class="nba js-playerlast"></p></div>
+                        <div class="align"> <p class="nba"> Numero de Maillot : </p>  <p class="nba js-playerjersey"></p></div>
+                        <div class="align"> <p class="nba"> ID du Joueur : </p>  <p class="nba js-playerid"></p></div>
+                        <div class="align"> <p class="nba"> Taille en metres : </p>  <p class="nba js-playersize"></p></div> 
+                        <div class="align"> <p class="nba"> Poids en Kg : </p>  <p class="nba js-playerweight"></p></div>
+                        <div class="align"> <p class="nba"> Nationalité : </p>  <p class="nba js-playercountry"></p></div>
+                        <div class="align"> <p class="nba"> Position : </p>  <p class="nba js-playerpos"></p></div>
 
 
-<body data-barba="wrapper">
+                    </div>
+                </div>
 
-
-    <ul class="transition">
-
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-  </ul>
-
-
-
-
-  <div class="preload-overlay">
-    <div class="overlay"></div>
-    <div class="container">
-        <!-- <img src="@asset('images/logo.svg')" alt=""> -->
-        <div>
-            <span class="text">L'essaim naturel,&nbsp</span><span id="feature" class="text"></span><span class="text">&nbsp du miel</span></p>
+                <div class="button_random">
+                    <button type="submit" value="" id="randomPlayer" class="btn draw-border">Joueur Aléatoire</button>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
-<div class="wrapper">
-
-  <main data-barba="container" data-barba-namespace="home">
-
-    <nav>
-        <ul>
-
-          <li><a href="history.html">Histoire</a></li>
-          <li><a href="product.html">Produit</a></li>
-          <li><a href="contact.html">Contact</a></li>
-      </ul>
-  </nav>
-
-</main>
-</div>
-
-
-
-
-
 </body>
 </html>
