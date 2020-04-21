@@ -74,6 +74,14 @@ config = {
             template: './src/index.html',
             filename: 'index.html'
         }),
+            new HtmlWebpackPlugin({
+            template: './src/third.html',
+            filename: 'third.html',
+        }),
+            new HtmlWebpackPlugin({
+            template: './src/fourth.html',
+            filename: 'fourth.html',
+        }),
         new MiniCssExtractPlugin({
             filename: `style.css`
         })
